@@ -1,4 +1,3 @@
-import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -9,13 +8,15 @@ import Home from './pages/Home';
 import PaymentSuccess from './pages/PaymentSuccess';
 import AuthGuard from './components/AuthGuard';
 import { Toaster } from './components/ui/toaster';
+import IndexPage from './pages/Index';
 
 function App() {
   return (
     <div className="min-h-screen bg-background text-foreground">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<IndexPage />} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/unauthorized" element={<Unauthorized />} />

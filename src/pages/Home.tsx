@@ -1,6 +1,6 @@
-import React, { useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Camera, Users, Shield, Share2, ArrowRight, Check, Star } from 'lucide-react';
+import { ArrowRight, Check, Star } from 'lucide-react';
 import { Button } from '../components/ui/button';
 import { stripePromise } from '../lib/stripe-client';
 import { createCheckoutSession } from '../lib/api';
@@ -68,6 +68,7 @@ export default function Home() {
       const { error } = await stripe.redirectToCheckout({ sessionId });
       
       if (error) throw error;
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (err) {
       toast({
         title: "Error",
